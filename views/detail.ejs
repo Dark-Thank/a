@@ -1,0 +1,26 @@
+<h1>Chi tiết học sinh</h1>
+<a href="/">Quay lại</a>
+
+<div style="margin: 1rem">
+    <p><strong>ID:</strong>
+        <%= student.studentId %>
+    </p>
+    <p><strong>Họ và tên:</strong>
+        <%= student.fullName %>
+    </p>
+    <p><strong>Ngày sinh:</strong>
+        <%= student.dateOfBirth %>
+    </p>
+    <p><strong>Giới tính:</strong>
+        <%= student.gender %>
+    </p>
+    <p><strong>CMND/CCCD:</strong>
+        <%= student.nationalId %>
+    </p>
+    <div>
+        <strong>Ảnh đại diện:</strong>
+        <div style="margin-top: 0.5rem">
+            <img src="<%= student.avatar %>" width="160" alt="avatar">
+        </div>
+    </div>
+</div>

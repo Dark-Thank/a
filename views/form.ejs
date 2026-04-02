@@ -1,0 +1,33 @@
+<h1>Tạo vé mới</h1>
+<a href="/">Quay lại</a>
+
+<form action="/students/upsert<%= student ? `/${student.studentId}` : "" %>" method="POST" enctype="multipart/form-data">
+
+    <div style="display: flex; flex-direction: column; gap: 10px; margin: 1rem;">
+        <input type="text" name="fullName" placeholder="fullName" value="<%= student?.fullName %>">
+        
+        <div>
+            <label>gender</label>
+            <select name="gender">
+                <option value="Male" <%= student?.gender === 'Male' ? "selected" : "" %>>Male</option>
+                <option value="Female" <%= student?.gender === 'Female' ? "selected" : "" %>>Female</option>
+            </select>
+        </div>
+        
+        
+        <input type="date" name="dateOfBirth" placeholder="dateOfBirth" value="<%= student?.dateOfBirth %>">
+        <input type="text" name="nationalId" placeholder="nationalId" value="<%= student?.nationalId %>">
+        
+        
+        <input type="file" name="avatar">
+        
+        <button type="submit">Lưu</button>
+    </div>
+    
+</form>
+
+
+
+<% if ( typeof error !== "undefined" && error) { %>
+    <p><%= error %></p>
+<% } %>
