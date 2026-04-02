@@ -6,9 +6,10 @@ const {
   ScanCommand,
 } = require("@aws-sdk/lib-dynamodb");
 const { PutObjectCommand, DeleteObjectCommand } = require("@aws-sdk/client-s3");
+require('dotenv').config();
 
-const TableName = "Students";
-const Bucket = "bucketstudentdarkthank";
+const TableName = process.env.TABLE; 
+const Bucket = process.env.BUCKET;
 
 const getAll = async (nameQuery, statusQuery) => {
   const params = { TableName };
